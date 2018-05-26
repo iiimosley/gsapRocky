@@ -22,14 +22,3 @@ const server = createServer((req, res) => {
 });
 
 server.listen(port, host, () => { console.log('Servin\' up on ' + port); });
-
-// readFile('./index.html', (err, file) => {
-//   if (err) { throw err; }
-//   const server = createServer((req, res) => {
-//     res.statusCode = 200;
-//     res.setHeader('Content-type', 'text/html');
-//     res.write(file);
-//     res.end();
-//   });
-
-// });
