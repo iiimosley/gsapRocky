@@ -1,6 +1,5 @@
 'use strict';
 
-const http = require('http');
 const { readFile } = require('fs');
 const { createServer } = require('http');
 

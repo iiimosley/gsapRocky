@@ -4,8 +4,9 @@
   "description": "Experimentation with GSAP in Vue",
   "main": "server.js",
   "scripts": {
-    "server": "nodemon server.js", 
-    "build": "webpack --config webpack.config.dev.js"
+    "server": "nodemon server.js",
+    "build": "cross-env NODE_ENV=production webpack",
+    "dev": "webpack-dev-server --config webpack.config.js"
   },
   "keywords": [],
   "author": "",
@@ -15,11 +16,20 @@
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.49",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0-beta.49",
+    "@babel/preset-env": "^7.0.0-beta.49",
+    "babel-loader": "^8.0.0-beta.3",
+    "cross-env": "^5.1.6",
     "css-loader": "^0.28.11",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
     "vue-loader": "^15.2.1",
     "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.9.1",
-    "webpack-cli": "^2.1.4"
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-server": "^3.1.4"
   }
 }
