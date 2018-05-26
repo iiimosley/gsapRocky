@@ -1,11 +1,20 @@
 <template>
   <div>
-    <h1>Gutten Taag</h1>
+    <Navbar />
+    <router-view />
   </div>
 </template>
 
-<style lang="scss">
-h1 {
-  text-align: center;
+<script>
+import Navbar from './components/Navbar';
+
+export default {
+  name: 'App',
+  components: { Navbar },
 }
+</script>
+
+
+<style>
+@import './assets/lib.css';
 </style>
