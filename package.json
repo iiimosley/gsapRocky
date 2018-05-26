@@ -2,8 +2,9 @@
   "name": "gsapRocky",
   "version": "1.0.0",
   "description": "Experimentation with GSAP in Vue",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "server": "nodemon server.js", 
     "build": "webpack --config webpack.config.dev.js"
   },
   "keywords": [],
