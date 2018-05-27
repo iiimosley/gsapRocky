@@ -14,7 +14,10 @@ export default {
 }
 </script>
 
-
 <style>
 @import './assets/lib.css';
+@import url('https://fonts.googleapis.com/css?family=Poppins|Raleway');
+div {
+  font-family: 'Raleway', Helvetica, sans-serif;
+}
 </style>

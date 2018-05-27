@@ -19,12 +19,12 @@ export default {
       header: 'GSAP Rocky',
       tagline: 'Experimentations with Green Socks Animations in a Reactive Environment',
       links: [{
-          url: '#/',
+          url: '/',
           text: 'Home',
         },
         {
-          url: '#/bouncing',
-          text: 'Bouncing',
+          url: '/bounce',
+          text: 'Bounce',
         }],
     };
   },
@@ -41,10 +41,11 @@ div {
 }
 
 h1 {
+  font-family: 'Poppins', Helvetica, sans-serif;
   font-size: 2.6em;
   letter-spacing: .1em;
   margin: 0;
-  padding: 1em .6em .6em;
+  padding: 1em 0 0;
 }
 
 ul {
@@ -52,6 +53,7 @@ ul {
   margin: 1em auto;
   justify-content: space-evenly;
   align-items: center;
+  padding: 0;
   padding-bottom: 1em;
   li {
     display: inline-block;
@@ -69,8 +71,5 @@ ul {
     }
   }
 }
-
-
-
 
 </style>
