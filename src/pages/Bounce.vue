@@ -1,6 +1,6 @@
 <template>
 <div>
-  <Orb :val="50" :fill="`#1e90ff`"></Orb>
+  <Orb v-for="shade in shades" :key="`${shade}Orb`" :val="cVal" :fill="shade"></Orb>
 </div>
 </template>
 
@@ -9,10 +9,23 @@ import Orb from '../components/Orb';
 
 export default {
   name: 'Bounce',
-  components: {Orb}
+  components: {Orb},
+  data() {
+    return {
+      cVal: 40,
+      shades: [`dodgerblue`, `darkorange`, `orchid`, `tomato`, `lime`]
+    }
+  }
 }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+  div {
+    display: flex;
+    margin: 4em auto;
+    padding-top: 8em;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+  }
 </style>

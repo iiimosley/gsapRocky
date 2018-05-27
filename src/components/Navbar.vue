@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       header: 'GSAP Rocky',
-      tagline: 'Experimentations with Green Socks Animations in a Reactive Environment',
+      tagline: 'Experimentations with SVG || Green Socks Animations || CSS in a Reactive Environment',
       links: [{
           url: '/',
           text: 'Home',
@@ -35,7 +35,7 @@ export default {
 <style lang="scss" scoped>
 
 div {
-  background: rgb(1, 61, 1);
+  background: rgb(29, 80, 29);
   color: whitesmoke;
   text-align: center;
 }
