@@ -1,7 +1,5 @@
 <template>
-<svg :height="val * 2" :width="val * 2">
   <circle :cx="val" :cy="val" :r="val" :fill="fill" />
-</svg>
 </template>
 
 <script>

@@ -1,10 +1,13 @@
 <template>
-<div>
-  <Orb v-for="shade in shades" :key="`${shade}Orb`" :val="cVal" :fill="shade"></Orb>
+<div class="orbRow">
+  <svg :height="cVal * 2" :width="cVal * 2" v-for="shade in shades" @mouseover="bounceUp" :key="`${shade}Orb`" >
+    <Orb :val="cVal" :fill="shade"></Orb>
+  </svg>
 </div>
 </template>
 
 <script>
+import {TweenLite} from 'gsap';
 import Orb from '../components/Orb';
 
 export default {
@@ -15,12 +18,18 @@ export default {
       cVal: 40,
       shades: [`dodgerblue`, `darkorange`, `orchid`, `tomato`, `lime`]
     }
-  }
+  },
+  methods: {
+    bounceUp: function(e) {
+      TweenLite.to(e.target, 1 / 4, {y:-50, ease:Power2.easeOut});
+      TweenLite.to(e.target, 1 / 2, {y:0, ease:Bounce.easeOut, delay: 1 / 4});
+    }
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-  div {
+  .orbRow {
     display: flex;
     margin: 4em auto;
     padding-top: 8em;
@@ -28,4 +37,5 @@ export default {
     align-items: center;
     width: 80%;
   }
+
 </style>
