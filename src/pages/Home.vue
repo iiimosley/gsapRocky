@@ -10,13 +10,8 @@
 export default {
   data() {
     return {
-      text: 'You Are Home',
+      text: 'You Are Home ',
       fontColor: 'blue'
-    }
-  },
-  mounted() {
-    for(let i=0; i<this.text.length; i++){
-      document.querySelector(`#letter${i}`).style.transform = `rotate(${360/this.text.length*i}deg)`;
     }
   },
 }
@@ -36,18 +31,24 @@ p {
     left: 0;
     top: 0;
     transform-origin: bottom center;
-    animation: roundAbout 1s infinite linear;
+  }
+  @for $i from 0 through 12 {
+    $start: 360/13*$i;
+    $end: 360/13*$i+360;
+    #letter#{$i} {
+      animation: roundAbout#{$i} 10s infinite linear;
+    }
+    @keyframes roundAbout#{$i} {
+      0%{
+        transform: rotate(($start)+deg);
+      }
+      100% {
+        transform: rotate(($end)+deg);
+      }
+    }
   }
 }
 
-@keyframes roundAbout {
-  0% {
-    transform-style: preserve-3d;
-  }
-  100% {
-    transform: rotate(1turn);
-  }
-}
 
 
 </style>

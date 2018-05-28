@@ -23,7 +23,7 @@ export default {
     bounceUp: function(e) {
       console.log(e);
       if (e.target.tagName === 'circle'){
-      TweenLite.to(e.path[1], 1 / 4, {y:-50, ease:Power2.easeOut});
+      TweenLite.to(e.path[1], 1 / 4, {y:-130, ease:Power1.easeOut});
       TweenLite.to(e.path[1], 1 / 2, {y:0, ease:Bounce.easeOut, delay: 1 / 4});
       }
     }
