@@ -1,6 +1,6 @@
 <template>
 <div class="orbRow">
-  <svg :height="cVal * 2" :width="cVal * 2" v-for="shade in shades" @mouseover="bounceUp" :key="`${shade}Orb`" >
+  <svg :height="cVal * 2" :width="cVal * 2" v-for="shade in shades" @click="bounceUp" :key="`${shade}Orb`" >
     <Orb :val="cVal" :fill="shade"></Orb>
   </svg>
 </div>
@@ -21,8 +21,12 @@ export default {
   },
   methods: {
     bounceUp: function(e) {
+      // console.log(e);
+      // e.target.tagName === 'circle' ? console.log('circle!') : console.log('not a circle');
+      if (e.target.tagName === 'svg'){
       TweenLite.to(e.target, 1 / 4, {y:-50, ease:Power2.easeOut});
       TweenLite.to(e.target, 1 / 2, {y:0, ease:Bounce.easeOut, delay: 1 / 4});
+      }
     }
   },
 }
