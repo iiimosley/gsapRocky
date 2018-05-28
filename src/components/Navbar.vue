@@ -62,11 +62,13 @@ ul {
       text-decoration: none;
       font-size: 1.15em;
       color: inherit;
-      transition: all .18s;
+      transition: all .3s;
       &:hover{
-      color: bisque;
-      letter-spacing: .1em;
-      text-shadow: 0 0 .1em whitesmoke;
+        display: inline-block;
+        letter-spacing: .1em;
+        border-left: .2em solid bisque;
+        border-right: .2em solid bisque;
+        padding: 0 .3em;
       }
     }
   }

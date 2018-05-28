@@ -23,6 +23,7 @@ p {
   margin: 3em auto;
   position: relative;
   text-align: center;
+  animation: scaleText 2s alternate infinite;
   span {
     font-size: 3em;
     height: 4em;
@@ -36,16 +37,23 @@ p {
     $start: 360/13*$i;
     $end: 360/13*$i+360;
     #letter#{$i} {
-      animation: roundAbout#{$i} 10s infinite linear;
+      animation: roundAbout#{$i} 6s infinite linear;
     }
     @keyframes roundAbout#{$i} {
-      0%{
+      from {
         transform: rotate(($start)+deg);
       }
-      100% {
+      to {
         transform: rotate(($end)+deg);
       }
     }
   }
 }
+
+@keyframes scaleText {
+  to {
+    transform: scale(1.3);
+  }
+}
+
 </style>
