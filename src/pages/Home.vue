@@ -1,8 +1,8 @@
 <template>
 <div>
-  <h2>
+  <p>
     <span v-for="(letter, i) in text" :key="`letter${i}`" :id="`letter${i}`">{{letter}}</span>
-  </h2>
+  </p>
 </div>
 </template>
 
@@ -23,16 +23,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h2 {
+p {
+  width: 30%;
+  margin: 3em auto;
   position: relative;
   text-align: center;
-  span{
-    height: 3em;
+  span {
+    font-size: 3em;
+    height: 4em;
     position: absolute;
-    width: 20px;
+    width: 1em;
     left: 0;
     top: 0;
     transform-origin: bottom center;
+    animation: roundAbout 1s infinite linear;
+  }
+}
+
+@keyframes roundAbout {
+  0% {
+    transform-style: preserve-3d;
+  }
+  100% {
+    transform: rotate(1turn);
   }
 }
 
