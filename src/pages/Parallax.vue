@@ -49,6 +49,25 @@ export default {
   text-shadow: 0 0 5px #000;
   h2 {
     font-size: 4em;
+    animation: wiggle 1.7s infinite alternate linear;
+  }
+}
+
+@keyframes wiggle {
+  0%{
+    transform: skew(0);
+  }
+  25%{
+    transform: skew(10deg);
+  }
+  50%{
+    transform: skew(-15deg);
+  }
+  75%{
+    transform: skew(28deg);
+  }
+  100%{
+    transform: skew(-30deg);
   }
 }
 
