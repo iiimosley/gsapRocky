@@ -25,7 +25,11 @@ export default {
         {
           url: '/bounce',
           text: 'Bounce',
-        }],
+        },
+        {
+          url: '/parallax',
+          text: 'Parrallax',
+        },],
     };
   },
 };
