@@ -1,12 +1,12 @@
 <template>
 <main class="wrapper">
-  <section class="section parallax bg1">
-    <h2>Such Adorabz</h2>
+  <section @mousemove="shadowEffect" class="section parallax bg1">
+    <h2>Such Adorbz</h2>
   </section>
-  <section class="section static">
+  <section @mousemove="shadowEffect" class="section static">
     <h2>Boring</h2>
   </section>
-  <section class="section parallax bg2">
+  <section @mousemove="shadowEffect" class="section parallax bg2">
     <h2>SO FWUFFY AwWwW</h2>
   </section>
 </main>
@@ -14,9 +14,25 @@
 
 <script>
 export default {
-  data() {
-    return {
-      
+  methods: {
+    shadowEffect: function(e){
+      const section = document.querySelector('.section');
+      const text = section.querySelector('h2');
+      const walk = 100;
+
+      const {offsetWidth: width, offsetHeight: height} = section;
+      let {offsetX: x, offsetY: y} = e;
+      if(e.target.tagName !== 'SECTION'){
+        x = x + e.target.offsetLeft;
+        y = y + e.target.offsetTop;
+      }
+
+      const walkFormula = (z, prop) => Math.round((z / prop * walk) - (walk / 2));
+      const walkX = walkFormula(x, width);
+      const walkY = walkFormula(y, height);
+
+      text.style.textShadow = `${-walkX}px ${-walkY}px .2em dodgerblue, ${walkX}px ${walkY}px .2em tomato`;
+      console.log(walkX, walkY);
     }
   }
 }
@@ -49,6 +65,25 @@ export default {
   text-shadow: 0 0 5px #000;
   h2 {
     font-size: 4em;
+    animation: wiggle 1.7s infinite alternate linear;
+  }
+}
+
+@keyframes wiggle {
+  0%{
+    transform: skew(-8deg);
+  }
+  25%{
+    transform: skew(10deg);
+  }
+  50%{
+    transform: skew(-15deg);
+  }
+  75%{
+    transform: skew(28deg);
+  }
+  100%{
+    transform: skew(-30deg);
   }
 }
 
