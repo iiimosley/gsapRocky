@@ -17,6 +17,7 @@ export default {
   methods: {
     shadowEffect: function(e){
       const section = document.querySelector('.section');
+      const text = section.querySelector('h2');
       const walk = 100;
 
       const {offsetWidth: width, offsetHeight: height} = section;
@@ -29,6 +30,8 @@ export default {
       const walkFormula = (z, prop) => Math.round((z / prop * walk) - (walk / 2));
       const walkX = walkFormula(x, width);
       const walkY = walkFormula(y, height);
+
+      text.style.textShadow = `${walkX}px ${walkY}px .2em dodgerblue`;
       console.log(walkX, walkY);
     }
   }
