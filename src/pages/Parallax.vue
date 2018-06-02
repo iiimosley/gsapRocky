@@ -1,12 +1,12 @@
 <template>
 <main class="wrapper">
-  <section class="section parallax bg1">
-    <h2>Such Adorabz</h2>
+  <section @mousemove="shadowEffect" class="section parallax bg1">
+    <h2>Such Adorbz</h2>
   </section>
-  <section class="section static">
+  <section @mousemove="shadowEffect" class="section static">
     <h2>Boring</h2>
   </section>
-  <section class="section parallax bg2">
+  <section @mousemove="shadowEffect" class="section parallax bg2">
     <h2>SO FWUFFY AwWwW</h2>
   </section>
 </main>
@@ -14,9 +14,22 @@
 
 <script>
 export default {
-  data() {
-    return {
-      
+  methods: {
+    shadowEffect: function(e){
+      const section = document.querySelector('.section');
+      const walk = 100;
+
+      const {offsetWidth: width, offsetHeight: height} = section;
+      let {offsetX: x, offsetY: y} = e;
+      if(e.target.tagName !== 'SECTION'){
+        x = x + e.target.offsetLeft;
+        y = y + e.target.offsetTop;
+      }
+
+      const walkFormula = (z, prop) => Math.round((z / prop * walk) - (walk / 2));
+      const walkX = walkFormula(x, width);
+      const walkY = walkFormula(y, height);
+      console.log(walkX, walkY);
     }
   }
 }
@@ -55,7 +68,7 @@ export default {
 
 @keyframes wiggle {
   0%{
-    transform: skew(0);
+    transform: skew(-8deg);
   }
   25%{
     transform: skew(10deg);
