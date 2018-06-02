@@ -31,7 +31,7 @@ export default {
       const walkX = walkFormula(x, width);
       const walkY = walkFormula(y, height);
 
-      text.style.textShadow = `${-walkX}px ${-walkY}px .2em dodgerblue`;
+      text.style.textShadow = `${-walkX}px ${-walkY}px .2em dodgerblue, ${walkX}px ${walkY}px .2em tomato`;
       console.log(walkX, walkY);
     }
   }
